@@ -1,10 +1,14 @@
 package Services;
 
 import DTO.Student;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 @Service
+@Component
+@ComponentScan
 public class StudentService {
     public Mono<Student> getStudent(){
         return Mono.just(new Student(1L,"shashi","A+"));
