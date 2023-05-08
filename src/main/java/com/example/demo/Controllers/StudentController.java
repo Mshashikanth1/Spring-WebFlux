@@ -25,7 +25,7 @@ public class StudentController {
 
     @GetMapping(value = "/hello")
     public Mono<String> init(){
-        return Mono.just("Hello");
+        return Mono.just("Hello shashi kanth");
     }
 
     @GetMapping(value="/getSome")
