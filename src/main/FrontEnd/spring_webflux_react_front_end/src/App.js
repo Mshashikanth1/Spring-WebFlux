@@ -32,6 +32,15 @@ function App() {
             .then(data=>setApiResponseJson(data))
     },[]);
 
+    const[apiResponseHyperLink,setApiResponseHyperLink]=useState('')
+
+    useEffect(()=>{
+        fetch("http://localhost:8080/meme")
+            .then(res=>res.text())
+            .then(data=>setApiResponseHyperLink(data))
+        }
+        ,[]);
+
 
 
     //  let fetchComments=async ()=>{
@@ -96,6 +105,13 @@ function App() {
               API THAT RETURN SIMPLE JSON:
               <div style={{ backgroundColor: 'black', color: 'white', padding: '4px',fontSize: '15px' }}>
                   <pre>{JSON.stringify(apiResponseJson,null,2)}</pre>
+              </div>
+
+              <br></br>
+              <br></br>
+              API THAT RETURN SIMPLE HyperLink:
+              <div style={{ backgroundColor: 'black', color: 'white', padding: '4px',fontSize: '15px' }}>
+                 <img src={apiResponseHyperLink}/>
               </div>
 
           </h>
